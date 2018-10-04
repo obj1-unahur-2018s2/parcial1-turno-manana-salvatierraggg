@@ -1,0 +1,102 @@
+import profesionales.*
+import empresa.*
+import solicitantes.*
+test "testX" {
+
+	assert.that(true)
+
+
+
+	const sanMartin=new Universidad()
+	const rosario=new Universidad()
+	const corrientes=new Universidad()
+	const hurlingham=new Universidad()
+	
+	sanMartin.provincia("SantaFe")
+	sanMartin.honorariosPorHora(3500)
+	rosario.provincia("SantaFe")
+	rosario.honorariosPorHora(2800)
+	corrientes.provincia("corrientes")
+	corrientes.honorariosPorHora(4200)
+	hurlingham.provincia("BuenosAires")
+	hurlingham.honorariosPorHora(8800)
+	
+	
+	
+	
+	const juana=new ProfesionalVinculado()
+	const melina=new ProfesionalAsociado()
+	const rocio=new ProfesionalLibre()
+	const luciana=new ProfesionalLibre()
+
+	juana.universidad(rosario)
+	rocio.universidad(hurlingham)
+	rocio.HonorariosPorHora(5000)
+	rocio.provinciasDondePuedeTrabajar("SantaFe")
+	rocio.provinciasDondePuedeTrabajar("BuenosAires")
+	rocio.provinciasDondePuedeTrabajar("cordoba")
+	luciana.universidad(rosario)
+	luciana.HonorariosPorHora(3200)
+	luciana.provinciasDondePuedeTrabajar("SantaFe")
+	luciana.provinciasDondePuedeTrabajar("EntreRios")
+	
+	const elPordiosero=new Empresa()
+	
+	elPordiosero.honorarioDeReferencia(3500)
+	elPordiosero.contratarProfesional(juana)
+	elPordiosero.contratarProfesional(melina)
+	elPordiosero.contratarProfesional(rocio)
+	elPordiosero.contratarProfesional(luciana)
+	elPordiosero.ProfesionalesCaros()
+	elPordiosero.conjuntoUniversitario()
+	elPordiosero.profecionalMasBaratos()
+	elPordiosero.estaCubierta("SantaFe")
+	elPordiosero.estaCubierta("Corrientes")
+	elPordiosero.estaCubierta("BuenosAires")
+	elPordiosero.estaCubierta("EntreRios")
+
+
+
+//seunda parte
+
+	
+	juana.cobrar(1000)
+	melina.cobrar(1000)
+	rocio.cobrar(1000)
+	luciana.cobrar(1000)
+	
+	juana.pasarDinero()
+	juana.universidad().dinero()
+	
+	melina.pasarDinero()
+	asociacionDelLitoral.dinero()
+
+	rocio.pasarDinero(200,luciana)
+	rocio.dinero()
+	luciana.dinero()
+
+//tercera parte
+
+const pepe=new Personas()
+const hector=new Personas()
+const marinaro=new Institucion()
+const narampol=new Institucion()
+
+const todo4=new Universidad()
+
+pepe.establecerProvincia("BuenosAires")
+hector.establecerProvincia("Tucuman")
+marinaro.reconocerUniversidad(sanMartin)
+narampol.reconocerUniversidad(todo4)
+
+elPordiosero.puedeAtender(pepe)
+elPordiosero.puedeAtender(hector)
+elPordiosero.puedeAtender(marinaro)
+elPordiosero.puedeAtender(narampol)
+
+
+}
+
+
+
+
